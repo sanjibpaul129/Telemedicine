@@ -56,7 +56,7 @@
         <div class="form-outer">
           <div class="input-group mb-3">
             <span class="input-group-text">Leave Start Date</span>
-            <input name="date_of_dormant" type="date" class="form-control" />
+            <input name="date_of_dormant" type="date" class="form-control" required />
           </div>
         </div>
 
@@ -64,27 +64,14 @@
           <div class="form-outer">
             <div class="input-group mb-3">
               <span class="input-group-text">Leave End Date</span>
-              <input name="date_of_dormant" type="date" class="form-control" />
+              <input name="date_of_dormant" type="date" class="form-control" required />
             </div>
           </div>
-  
-
-        <div class="form-outer">
-          <div class="input-group mb-3">
-            <span class="input-group-text">Health Facility Name:</span>
-            <input
-              name="health_facility_name"
-              type="text"
-              class="form-control"
-            />
-          </div>
-        </div>
-
         <div class="form-outer">
           <div class="input-group mb-3">
             <span class="input-group-text">Block Name:</span>
             <select name="block_name" id="blockName" class="form-select form-select-sm"
-              aria-label=".form-select-sm example">
+              aria-label=".form-select-sm example" required>
               <option selected disabled>Please select</option>
               <option value="Matigara">Matigara</option>
               <option value="Kharibari">Kharibari</option>
@@ -98,8 +85,8 @@
           <div class="input-group mb-3">
             <span class="input-group-text">HWC Name:</span>
             <select name="how_many_days_tm_not_to_be_done_hwc" id="hwcName"
-              class="form-select form-select-sm" aria-label=".form-select-sm example">
-              <option selected disabled>Please select block name</option>
+              class="form-select form-select-sm" aria-label=".form-select-sm example" required>
+              <option selected disabled>Please select block name first</option>
             </select>
           </div>
         </div>
@@ -112,8 +99,7 @@
             <select
               name="how_many_days_tm_not_to_be_done"
               class="form-select form-select-sm"
-              aria-label=".form-select-sm example"
-            >
+              aria-label=".form-select-sm example" required>
               <option selected>plese select</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -128,7 +114,7 @@
             <input
               name="please_enter_cho_name"
               type="text"
-              class="form-control"
+              class="form-control" required
             />
           </div>
         </div>
@@ -141,8 +127,7 @@
             <select
               name="leave_type"
               class="form-select form-select-sm"
-              aria-label=".form-select-sm example"
-            >
+              aria-label=".form-select-sm example" required>
               <option selected>Please Select</option>
               <option value="1">CL</option>
               <option value="2">CCL</option>
@@ -167,7 +152,7 @@
         <div class="form-outer">
           <div class="mb-3">
             <label  for="formFileMultiple" class="form-label">Please Upload Your leave Application Approved By Higher  Authority</label>
-            <input  name="choose_file"  class="form-control"  type="file"  id="formFileMultiple" multiple />
+            <input  name="choose_file"  class="form-control"  type="file"  id="formFileMultiple" multiple required />
           </div>
         </div>
         <div class="form-outer">
