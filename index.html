@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Telemedicine</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+      }
+      body {
+        background-color: #426273;
+        height: 150vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main {
+        flex-basis: 80vh;
+        height: 130vh;
+        background-color: white;
+      }
+      .main h3 {
+        padding: 20px 100px;
+        font-size: 25px;
+        background-color: rgb(14, 143, 148);
+      }
+      .main form {
+        padding: 10px;
+      }
+      .form-outer {
+        padding-bottom: 10px;
+      }
+      .form-outer button {
+        background-color: rgb(3, 15, 15);
+        color: white;
+        border: 0cqmax;
+        margin: 10px 30%;
+        width: 40%;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h3>Telemedicine Dormat form</h3>
+      <form method="post" id="form">
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Leave Start Date</span>
+            <input name="date_of_dormant" type="date" class="form-control" />
+          </div>
+        </div>
+
+        <form method="post" id="form">
+          <div class="form-outer">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Leave End Date</span>
+              <input name="date_of_dormant" type="date" class="form-control" />
+            </div>
+          </div>
+  
+
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Health Facility Name:</span>
+            <input
+              name="health_facility_name"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Block Name:</span>
+            <select name="block_name" id="blockName" class="form-select form-select-sm"
+              aria-label=".form-select-sm example">
+              <option selected disabled>Please select</option>
+              <option value="Matigara">Matigara</option>
+              <option value="Kharibari">Kharibari</option>
+              <option value="Naxalbari">Naxalbari</option>
+              <option value="Phansidewa">Phansidewa</option>
+             
+            </select>
+          </div>
+        </div>
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text">HWC Name:</span>
+            <select name="how_many_days_tm_not_to_be_done_hwc" id="hwcName"
+              class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option selected disabled>Please select block name</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text"
+              >How many days TM not to be done:</span
+            >
+            <select
+              name="how_many_days_tm_not_to_be_done"
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+            >
+              <option selected>plese select</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">More</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Please Enter CHO Name:</span>
+            <input
+              name="please_enter_cho_name"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <span class="input-group-text"
+              >Leave Type:</span
+            >
+            <select
+              name="leave_type"
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+            >
+              <option selected>Please Select</option>
+              <option value="1">CL</option>
+              <option value="2">CCL</option>
+              <option value="3">EL</option>
+              <option value="4">Child Care Leave</option>
+              <option value="5">Maternity Leave</option>
+              <option value="6">Medical Leave</option>
+              <option value="7">Abortion Leave</option>
+              <option value="8">Sick Leave</option>
+              <option value="9">GH</option>
+              <option value="10">Duare Sarker Camp</option>
+              <option value="11">Block Level Meeting/Training</option>
+              <option value="12">NCD Outreach Camp</option>
+              <option value="13">MIES Meeting</option>
+              <option value="14">Gp Meeting</option>
+              <option value="15">District Level Training/Meeting</option>
+              <option value="16">Any Other Reasons</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-outer">
+          <div class="mb-3">
+            <label  for="formFileMultiple" class="form-label">Please Upload Your leave Application Approved By Higher  Authority</label>
+            <input  name="choose_file"  class="form-control"  type="file"  id="formFileMultiple" multiple />
+          </div>
+        </div>
+        <div class="form-outer">
+          <div class="input-group mb-3">
+            <label ><b><u>* Read Before Submit</u></b></label>
+
+          </div>
+          <label><b>understand, by Submit this request form for leave, I will be responsible for notifying respected BMOH, DPHNO & Sr. PHN of the Dept. of DH&FW, Darjeeling SMP of the date of my return. If need to extended my leave, I will contact to the higher authorities prior to the date above.</b> </label>
+        </div>
+
+
+        <div class="form-outer">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    let url ='https://script.google.com/macros/s/AKfycbwwZpBMOYYQn6kZq2XgsOW_OQ22wyHvrh7eMFufqjTYfTUK7se9Jt2PtidZ6L9_e3jQFQ/exec';
+    let form = document.querySelector('#form');
+    let blockDropdown = document.querySelector('[name="block_name"]');
+    let hwcDropdown = document.querySelector('[name="how_many_days_tm_not_to_be_done_hwc"]');
+
+    function updateHWCOptions(blockName) {
+      let hwcOptions = [];
+      hwcDropdown.innerHTML = '<option selected disabled>Please select</option>';
+      switch (blockName) {
+        case 'Matigara':
+          hwcOptions =  ['Baromohonsing sc' , 'Dagapur sc' , 'Dina sc' , 'Kalkut GPHQ sc' , 'Kawakhari sc' , 'Kawakhali sc','Khaprail sc','Leninpur sc','Matigara sc','Mohorgaon-Guima sc','New Chamta sc','Nobinjote sc','Paticolony sc','Sevoke sc','Shalbari sc'];
+          break;
+        case 'Kharibari':
+          hwcOptions = ['Bhalukgara sc','Dangarvita sc','Kharibari sc','Khopalasi sc','Shyamdhan sc','Bazarojote sc','Binnabari sc','Deburam sc','Rangali sc','Telengajote sc'];
+          break;
+        case 'Naxalbari':
+          hwcOptions = ['Bengdubi sc' , 'Bhimram sc' , 'ChandalJote sc' , 'Muniram sc' , 'Naxalbari sc' , 'Nepania sc' , 'Ranidanga sc' , 'Upper Bagdogra sc' , 'Bawnivita sc' , 'Birsing sc' , 'Hatighisa sc' , 'Hatighisa sc' , 'Jharujote sc' , 'Lower bagdogra sc' , 'Roghuram sc' , 'Rupsing sc'];
+          break;
+        case 'Phansidewa':
+          hwcOptions = ['Ambari sc' , 'Bijlimoni sc' , 'Chathat sc' , 'Dhamalijote sc' , 'Kachubari sc' , 'Kuchiamore sc' , 'Lachubati sc' , 'Laldas sc' , 'Matigara sc' , 'Raijeejote sc' , 'Sahabad sc' , 'Tarbandha sc' , 'Bhalomanshi sc' , 'Chowpokuri sc' ,  'Hansqua sc' , 'Kuchiajote sc' , 'Laxmansing sc' , 'Leuchupokri sc' , 'Nirmalijote sc' , 'Vimbar sc'];
+          break;
+      }
+      hwcOptions.forEach((option) => {
+        let optionElement = document.createElement('option');
+        optionElement.textContent = option;
+        hwcDropdown.appendChild(optionElement);
+      });
+    }
+
+    blockDropdown.addEventListener('change', (event) => {
+      let selectedBlock = event.target.value;
+      updateHWCOptions(selectedBlock);
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let formData = new FormData(form);
+      fetch(url, {
+        method: 'POST',
+        body: formData,
+      })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
+
+    form.addEventListener("submit",(e)=>{
+      let new_data = new FormData(form);
+      fetch(url,{
+        method: "POST",
+        body: new_data
+      }).then((res)=> res.text())
+      .then((finalRes)=>{ console.log(finalRes)});
+      e.preventDefault();
+    })
+
+    // let url =
+    //   "https://script.google.com/macros/s/AKfycbwwZpBMOYYQn6kZq2XgsOW_OQ22wyHvrh7eMFufqjTYfTUK7se9Jt2PtidZ6L9_e3jQFQ/exec";
+    // let form = document.querySelector("#form");
+    // form.addEventListener("submit", (e) => {
+    //   e.preventDefault();
+    //   let formData = new FormData(form);
+    //   fetch(url, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "text/plain",
+    //     },
+    //     body: formData,
+    //   })
+    //     .then((response) => response.text())
+    //     .then((data) => {
+    //       console.log(data);
+    //       // Handle success or perform actions after data is sent
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error:", error);
+    //       // Handle errors
+    //     });
+    // });
+  </script>
+</html>
