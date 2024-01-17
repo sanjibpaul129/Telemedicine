@@ -84,7 +84,7 @@
         <div class="form-outer">
           <div class="input-group mb-3">
             <span class="input-group-text">HWC Name:</span>
-            <select name="how_many_days_tm_not_to_be_done_hwc" id="hwcName"
+            <select name="hwc_name" id="hwcName"
               class="form-select form-select-sm" aria-label=".form-select-sm example" required>
               <option selected disabled>Please select block name first</option>
             </select>
@@ -174,7 +174,7 @@
     let url ='https://script.google.com/macros/s/AKfycbzqPqSVcuAfMCPz_krcfCiB3iTJPXOlsNqALVudf6RVvrLqxQ8mmcgUew2AZWFLol33/exec';
     let form = document.querySelector('#form');
     let blockDropdown = document.querySelector('[name="block_name"]');
-    let hwcDropdown = document.querySelector('[name="how_many_days_tm_not_to_be_done_hwc"]');
+    let hwcDropdown = document.querySelector('[name="hwc_name"]');
 
     function updateHWCOptions(blockName) {
       let hwcOptions = [];
@@ -206,7 +206,6 @@
     });
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       let formData = new FormData(form);
       fetch(url, {
         method: 'POST',
@@ -216,23 +215,25 @@
       .then((data) => {
         console.log(data);
       })
+      
       .catch((error) => {
         console.error('Error:', error);
       });
+      e.preventDefault();
     });
 
-    form.addEventListener("submit",(e)=>{
-      let new_data = new FormData(form);
-      fetch(url,{
-        method: "POST",
-        body: new_data
-      }).then((res)=> res.text())
-      .then((finalRes)=>{ console.log(finalRes)});
-      // e.preventDefault();
-    })
+    // form.addEventListener("submit",(e)=>{
+    //   let new_data = new FormData(form);
+    //   fetch(url,{
+    //     method: "POST",
+    //     body: new_data
+    //   }).then((res)=> res.text())
+    //   .then((finalRes)=>{ console.log(finalRes)});
+    //   // e.preventDefault();
+    // })
 
     // let url =
-    //   "https://script.google.com/macros/s/AKfycbwwZpBMOYYQn6kZq2XgsOW_OQ22wyHvrh7eMFufqjTYfTUK7se9Jt2PtidZ6L9_e3jQFQ/exec";
+    //   "https://script.google.com/macros/s/AKfycbzqPqSVcuAfMCPz_krcfCiB3iTJPXOlsNqALVudf6RVvrLqxQ8mmcgUew2AZWFLol33/exec";
     // let form = document.querySelector("#form");
     // form.addEventListener("submit", (e) => {
     //   e.preventDefault();
