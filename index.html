@@ -56,7 +56,7 @@
         <div class="form-outer">
           <div class="input-group mb-3">
             <span class="input-group-text">Leave Start Date</span>
-            <input name="leave_start_date" type="date" class="form-control" required />
+            <input name="leave_start_date" type="date" class="form-control"  />
           </div>
         </div>
 
@@ -64,14 +64,14 @@
           <div class="form-outer">
             <div class="input-group mb-3">
               <span class="input-group-text">Leave End Date</span>
-              <input name="leave_end_date" type="date" class="form-control" required />
+              <input name="leave_end_date" type="date" class="form-control"  />
             </div>
           </div>
         <div class="form-outer">
           <div class="input-group mb-3">
             <span class="input-group-text">Block Name:</span>
             <select name="block_name" id="blockName" class="form-select form-select-sm"
-              aria-label=".form-select-sm example" required>
+              aria-label=".form-select-sm example" >
               <option selected disabled>Please select</option>
               <option value="Matigara">Matigara</option>
               <option value="Kharibari">Kharibari</option>
@@ -85,7 +85,7 @@
           <div class="input-group mb-3">
             <span class="input-group-text">HWC Name:</span>
             <select name="hwc_name" id="hwcName"
-              class="form-select form-select-sm" aria-label=".form-select-sm example" required>
+              class="form-select form-select-sm" aria-label=".form-select-sm example" >
               <option selected disabled>Please select block name first</option>
             </select>
           </div>
@@ -99,7 +99,7 @@
             <select
               name="how_many_days_tm_not_to_be_done"
               class="form-select form-select-sm"
-              aria-label=".form-select-sm example" required>
+              aria-label=".form-select-sm example" >
               <option selected>plese select</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -114,7 +114,7 @@
             <input
               name="please_enter_cho_name"
               type="text"
-              class="form-control" required
+              class="form-control" 
             />
           </div>
         </div>
@@ -127,7 +127,7 @@
             <select
               name="leave_type"
               class="form-select form-select-sm"
-              aria-label=".form-select-sm example" required>
+              aria-label=".form-select-sm example" >
               <option selected>Please Select</option>
               <option value="1">CL</option>
               <option value="2">CCL</option>
@@ -152,7 +152,7 @@
         <div class="form-outer">
           <div class="mb-3">
             <label  for="formFileMultiple" class="form-label">Please Upload Your leave Application Approved By Higher  Authority</label>
-            <input  name="choose_file"  class="form-control"  type="file"  id="formFileMultiple" multiple required />
+            <input  name="choose_file"  class="form-control"  type="file"  id="formFileMultiple" multiple  />
           </div>
         </div>
         <div class="form-outer">
@@ -209,7 +209,8 @@
       let formData = new FormData(form);
       fetch(url, {
         method: 'POST',
-        body: formData,
+        mode: 'cors', 
+        body: {formData},
       })
       .then((response) => response.text())
       .then((data) => {
